@@ -10,7 +10,7 @@ import AnnouncementMarquee from "@/components/AnnouncementMarquee";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted">
       <AnnouncementMarquee />
       <Header />
       
