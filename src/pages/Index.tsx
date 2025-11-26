@@ -1,4 +1,4 @@
-import { ShoppingCart, Check, Star, Shield, Award, Sparkles, TrendingUp, CheckCircle } from "lucide-react";
+import { ShoppingCart, Check, Star, Shield, Award, Sparkles, TrendingUp, CheckCircle, Heart, Clock, Droplets, Home, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -60,11 +60,21 @@ const Index = () => {
 
               {/* Key Features - Elegant List */}
               <div className="space-y-3 py-6 border-y border-border">
-                {["1800W Professional Performance", "100% Chemical-Free Cleaning", "1.5L Extended Capacity Tank", "15 Premium Attachments", "2-Year Comprehensive Warranty"].map((feature, index) => <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">{feature}</span>
-                  </div>)}
-              </div>
+                {[
+                  { text: "Safe for kids and pets to play on immediately", icon: Heart },
+                  { text: "Clean your entire home without stopping to refill", icon: Clock },
+                  { text: "Eliminate allergens and bacteria without harsh chemicals", icon: Droplets },
+                  { text: "Transform every surface from floors to upholstery", icon: Home },
+                  { text: "Protected investment with worry-free 2-year coverage", icon: ShieldCheck }
+                ].map((feature, index) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div key={index} className="flex items-center gap-3">
+                      <Icon className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-foreground">{feature.text}</span>
+                    </div>
+                  );
+                })}</div>
 
               {/* Pricing - Premium Style */}
               <div className="space-y-4">
