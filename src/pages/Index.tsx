@@ -10,7 +10,7 @@ import AnnouncementMarquee from "@/components/AnnouncementMarquee";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted overflow-x-hidden">
       <AnnouncementMarquee />
       <Header />
       
@@ -42,12 +42,12 @@ const Index = () => {
                 <Badge className="bg-secondary text-secondary-foreground">Limited Time Offer</Badge>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Professional Steam Cleaning
                 <span className="text-primary block mt-2">For Your Healthiest Home Yet</span>
               </h1>
 
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Imagine walking into a spotless home every day—without the guilt of harsh chemicals around your kids or pets. 
                 PureClean Pro transforms cleaning from a dreaded chore into effortless satisfaction. Watch years of grime vanish 
                 in seconds with pure steam power. Your family deserves a cleaner home and a healthier life.
