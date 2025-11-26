@@ -6,9 +6,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCarousel from "@/components/ProductCarousel";
-import beforeAfter from "@/assets/before-after.webp";
-import chemicalFree from "@/assets/chemical-free.webp";
-import hassleFree from "@/assets/hassle-free.webp";
 
 const Index = () => {
   return (
@@ -20,12 +17,12 @@ const Index = () => {
         <section className="container mx-auto px-4 py-12 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Product Images */}
-            <div className="order-2 md:order-1">
+            <div>
               <ProductCarousel />
             </div>
 
             {/* Product Info */}
-            <div className="order-1 md:order-2 space-y-6">
+            <div className="space-y-6">
               <Badge className="bg-secondary text-secondary-foreground">Limited Time Offer</Badge>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
@@ -101,9 +98,10 @@ const Index = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="border-none shadow-lg">
-                <CardContent className="pt-6">
-                  <img src={chemicalFree} alt="Chemical-free cleaning safe for kids and pets" className="w-full rounded-lg mb-4" />
-                  <Shield className="h-12 w-12 text-primary mb-4" />
+                <CardContent className="pt-6 text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Shield className="h-10 w-10 text-primary" />
+                  </div>
                   <h3 className="text-xl font-bold mb-3">100% Safe & Natural</h3>
                   <p className="text-muted-foreground">
                     No harsh chemicals, no toxic fumes. Just pure steam that's completely safe 
@@ -113,9 +111,10 @@ const Index = () => {
               </Card>
 
               <Card className="border-none shadow-lg">
-                <CardContent className="pt-6">
-                  <img src={beforeAfter} alt="Dramatic before and after cleaning results" className="w-full rounded-lg mb-4" />
-                  <Zap className="h-12 w-12 text-primary mb-4" />
+                <CardContent className="pt-6 text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Zap className="h-10 w-10 text-primary" />
+                  </div>
                   <h3 className="text-xl font-bold mb-3">Professional Results</h3>
                   <p className="text-muted-foreground">
                     1800W of pure power delivers 230°F steam that penetrates deep, dissolving 
@@ -125,9 +124,10 @@ const Index = () => {
               </Card>
 
               <Card className="border-none shadow-lg">
-                <CardContent className="pt-6">
-                  <img src={hassleFree} alt="Easy to use with lockable continuous steam" className="w-full rounded-lg mb-4" />
-                  <Heart className="h-12 w-12 text-primary mb-4" />
+                <CardContent className="pt-6 text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Heart className="h-10 w-10 text-primary" />
+                  </div>
                   <h3 className="text-xl font-bold mb-3">Effortlessly Easy</h3>
                   <p className="text-muted-foreground">
                     Lockable continuous steam, 1.5L capacity for extended use, and lightweight 
