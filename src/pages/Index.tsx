@@ -73,9 +73,9 @@ const Index = () => {
 
               {/* Pricing */}
               <div className="pt-6 border-t border-border">
-                <div className="flex flex-wrap items-baseline gap-2 md:gap-3 mb-2">
-                  <span className="text-4xl md:text-5xl font-bold text-primary">$119.99</span>
-                  <span className="text-xl md:text-2xl text-muted-foreground line-through">$199.99</span>
+                <div className="flex flex-col items-start gap-1 md:flex-row md:items-baseline md:gap-3 mb-2">
+                  <span className="text-3xl md:text-5xl font-bold text-primary">$119.99</span>
+                  <span className="text-lg md:text-2xl text-muted-foreground line-through">$199.99</span>
                   <Badge variant="destructive" className="text-sm md:text-base">40% OFF</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">Free shipping • 2-year warranty included</p>
@@ -83,7 +83,7 @@ const Index = () => {
 
               {/* CTA Button */}
               <div>
-                <Button size="lg" className="w-full text-base md:text-lg h-12 md:h-14 shadow-lg">
+                <Button size="lg" className="w-full text-base md:text-lg h-11 md:h-14 shadow-lg">
                   <ShoppingCart className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                   Add to Cart
                 </Button>
