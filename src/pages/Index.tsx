@@ -103,6 +103,22 @@ const Index = () => {
               <p className="text-center text-sm text-muted-foreground">
                 Secure checkout • 2-year warranty included
               </p>
+
+              {/* Common Objections */}
+              <div className="mt-6 pt-6 border-t border-border space-y-3">
+                <p className="text-xs text-muted-foreground text-center mb-3">Common concerns answered:</p>
+                {[
+                  { question: "Does it really clean tough stains?", answer: "Yes - 230°F steam dissolves even baked-on grime" },
+                  { question: "Is it complicated to use?", answer: "No - just fill with water and it's ready in 3 minutes" },
+                  { question: "Will it damage my surfaces?", answer: "No - safe for all sealed surfaces and fabrics" },
+                  { question: "Does steam actually sanitize?", answer: "Yes - lab-tested to eliminate 99.9% of bacteria" }
+                ].map((item, index) => (
+                  <div key={index} className="text-left">
+                    <p className="text-sm text-foreground font-medium">{item.question}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
