@@ -6,10 +6,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCarousel from "@/components/ProductCarousel";
+import AnnouncementMarquee from "@/components/AnnouncementMarquee";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted">
+      <AnnouncementMarquee />
       <Header />
       
       <main>
@@ -19,20 +21,36 @@ const Index = () => {
             {/* Product Images */}
             <div>
               <ProductCarousel />
+              
+              {/* Trust Signals - Moved Here */}
+              <div className="flex items-center gap-2 mt-6">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
+                  ))}
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">4.9/5</strong> from 2,847 verified customers
+                </span>
+              </div>
             </div>
 
             {/* Product Info */}
             <div className="space-y-6">
-              <Badge className="bg-secondary text-secondary-foreground">Limited Time Offer</Badge>
+              <div className="flex gap-2">
+                <Badge className="bg-primary text-primary-foreground">100% Chemical-Free</Badge>
+                <Badge className="bg-secondary text-secondary-foreground">Limited Time Offer</Badge>
+              </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Professional Steam Cleaning,
-                <span className="text-primary block mt-2">Zero Chemicals</span>
+                Professional Steam Cleaning
+                <span className="text-primary block mt-2">For Your Healthiest Home Yet</span>
               </h1>
 
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Transform your home with the power of 1800W steam technology. Safe for kids, pets, 
-                and the planet. Achieve deep, effective cleaning without a single harmful chemical.
+                Imagine walking into a spotless home every day—without the guilt of harsh chemicals around your kids or pets. 
+                PureClean Pro transforms cleaning from a dreaded chore into effortless satisfaction. Watch years of grime vanish 
+                in seconds with pure steam power. Your family deserves a cleaner home and a healthier life.
               </p>
 
               {/* Key Features List */}
@@ -56,34 +74,19 @@ const Index = () => {
               {/* Pricing */}
               <div className="pt-6 border-t border-border">
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-5xl font-bold text-primary">$179.99</span>
-                  <span className="text-2xl text-muted-foreground line-through">$299.99</span>
+                  <span className="text-5xl font-bold text-primary">$119.99</span>
+                  <span className="text-2xl text-muted-foreground line-through">$199.99</span>
                   <Badge variant="destructive" className="text-base">40% OFF</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">Free shipping • 2-year warranty included</p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="flex-1 text-lg h-14 shadow-lg">
+              {/* CTA Button */}
+              <div>
+                <Button size="lg" className="w-full text-lg h-14 shadow-lg">
                   <ShoppingCart className="mr-2 h-5 w-5" />
                   Add to Cart
                 </Button>
-                <Button size="lg" variant="outline" className="flex-1 text-lg h-14">
-                  Learn More
-                </Button>
-              </div>
-
-              {/* Trust Signals */}
-              <div className="flex items-center gap-2 pt-4">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <span className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">4.9/5</strong> from 2,847 verified customers
-                </span>
               </div>
             </div>
           </div>
@@ -180,6 +183,11 @@ const Index = () => {
         {/* Testimonials */}
         <section className="bg-primary text-primary-foreground py-16">
           <div className="container mx-auto px-4">
+            <div className="flex justify-center mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-8 h-8 fill-secondary text-secondary" />
+              ))}
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               What Our Customers Say
             </h2>
