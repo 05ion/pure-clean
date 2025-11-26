@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Leaf, Shield, Truck, Award } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         {/* Trust Badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 pb-12 border-b border-primary-light/30">
@@ -45,14 +43,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-primary-foreground/80">
-              <li><a href="#about" className="hover:text-primary-foreground transition-colors">About Us</a></li>
-              <li><a href="#contact" className="hover:text-primary-foreground transition-colors">Contact</a></li>
-              <li><a href="#faq" className="hover:text-primary-foreground transition-colors">FAQ</a></li>
-            </ul>
-          </div>
+          
 
           {/* Legal */}
           <div>
@@ -82,8 +73,6 @@ const Footer = () => {
           <p>&copy; 2024 PureClean Pro. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
