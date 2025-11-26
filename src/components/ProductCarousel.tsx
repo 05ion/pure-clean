@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useRef } from "react";
 import productMain from "@/assets/product-main.jpg";
 import featureReach from "@/assets/feature-reach.webp";
 import multipurpose from "@/assets/multipurpose.webp";
@@ -17,42 +15,43 @@ const images = [
 
 const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
   };
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swipe left - go to next
+      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    }
+    if (touchEndX.current - touchStartX.current > 50) {
+      // Swipe right - go to previous
+      setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    }
   };
 
   return (
     <div className="w-full max-w-[calc(100vw-2rem)] md:max-w-full mx-auto">
       {/* Main Image */}
-      <div className="relative w-full overflow-hidden rounded-2xl bg-muted mb-4 shadow-lg">
+      <div 
+        className="relative w-full overflow-hidden rounded-2xl bg-muted mb-4 shadow-lg cursor-grab active:cursor-grabbing touch-pan-x"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <img
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
-          className="block w-full h-auto max-w-full object-contain"
+          className="block w-full h-auto max-w-full object-contain select-none"
+          draggable="false"
         />
-        
-        {/* Navigation Buttons */}
-        <Button
-          variant="secondary"
-          size="icon"
-          className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full shadow-lg"
-          onClick={goToPrevious}
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </Button>
-        <Button
-          variant="secondary"
-          size="icon"
-          className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full shadow-lg"
-          onClick={goToNext}
-        >
-          <ChevronRight className="h-6 w-6" />
-        </Button>
       </div>
 
       {/* Thumbnail Strip */}
