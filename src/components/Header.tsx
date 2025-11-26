@@ -9,7 +9,7 @@ const Header = () => {
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
               <Sparkles className="h-4 w-4 text-primary" />
             </div>
-            <span className="text-2xl font-serif font-bold tracking-wide text-foreground">
+            <span className="text-2xl font-serif font-normal tracking-wide text-foreground">
               PureClean
             </span>
           </a>
