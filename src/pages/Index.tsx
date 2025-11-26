@@ -60,21 +60,28 @@ const Index = () => {
 
               {/* Key Features - Elegant List */}
               <div className="space-y-3 py-6 border-y border-border">
-                {[
-                  { text: "Create safe environment for kids and pets to play on immediately", icon: Heart },
-                  { text: "Clean your entire home without stopping to refill", icon: Clock },
-                  { text: "Eliminate allergens and bacteria without harsh chemicals", icon: Droplets },
-                  { text: "Transform every surface from floors to upholstery", icon: Home },
-                  { text: "Protected investment with worry-free 2-year coverage", icon: ShieldCheck }
-                ].map((feature, index) => {
-                  const Icon = feature.icon;
-                  return (
-                    <div key={index} className="flex items-center gap-3">
+                {[{
+                text: "Create safe environment for kids and pets to play on immediately",
+                icon: Heart
+              }, {
+                text: "Clean your entire home without stopping to refill",
+                icon: Clock
+              }, {
+                text: "Eliminate allergens and bacteria without harsh chemicals",
+                icon: Droplets
+              }, {
+                text: "Transform every surface from floors to upholstery",
+                icon: Home
+              }, {
+                text: "Protected investment with worry-free 2-year coverage",
+                icon: ShieldCheck
+              }].map((feature, index) => {
+                const Icon = feature.icon;
+                return <div key={index} className="flex items-center gap-3">
                       <Icon className="w-5 h-5 text-primary flex-shrink-0" />
                       <span className="text-foreground">{feature.text}</span>
-                    </div>
-                  );
-                })}</div>
+                    </div>;
+              })}</div>
 
               {/* Pricing - Premium Style */}
               <div className="space-y-4">
@@ -105,18 +112,32 @@ const Index = () => {
               </p>
 
               {/* Common Objections */}
-              <div className="mt-6 pt-6 border-t border-border">
-                <p className="text-xs text-muted-foreground text-center mb-4">Common concerns answered:</p>
+              <div className="mt-6 border-t border-border py-0 pt-[25px]">
+                
                 <Accordion type="single" collapsible className="w-full space-y-2">
-                  {[
-                    { question: "Does it really clean tough stains?", answer: "Yes - 230°F steam dissolves even baked-on grime and sanitizes without scrubbing", icon: Sparkles, value: "obj-1" },
-                    { question: "Is it complicated to use?", answer: "No - just fill with water and it's ready in 3 minutes. One button operation", icon: Zap, value: "obj-2" },
-                    { question: "Will it damage my surfaces?", answer: "No - safe for all sealed surfaces and fabrics. Includes surface-specific attachments", icon: ShieldCheck, value: "obj-3" },
-                    { question: "Does steam actually sanitize?", answer: "Yes - lab-tested to eliminate 99.9% of bacteria, viruses, and allergens naturally", icon: Droplets, value: "obj-4" }
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <AccordionItem key={item.value} value={item.value} className="border border-border rounded-lg px-4 bg-muted/30">
+                  {[{
+                  question: "Does it really clean tough stains?",
+                  answer: "Yes - 230°F steam dissolves even baked-on grime and sanitizes without scrubbing",
+                  icon: Sparkles,
+                  value: "obj-1"
+                }, {
+                  question: "Is it complicated to use?",
+                  answer: "No - just fill with water and it's ready in 3 minutes. One button operation",
+                  icon: Zap,
+                  value: "obj-2"
+                }, {
+                  question: "Will it damage my surfaces?",
+                  answer: "No - safe for all sealed surfaces and fabrics. Includes surface-specific attachments",
+                  icon: ShieldCheck,
+                  value: "obj-3"
+                }, {
+                  question: "Does steam actually sanitize?",
+                  answer: "Yes - lab-tested to eliminate 99.9% of bacteria, viruses, and allergens naturally",
+                  icon: Droplets,
+                  value: "obj-4"
+                }].map(item => {
+                  const Icon = item.icon;
+                  return <AccordionItem key={item.value} value={item.value} className="border border-border rounded-lg px-4 bg-muted/30">
                         <AccordionTrigger className="text-left hover:no-underline py-3">
                           <div className="flex items-center gap-2">
                             <Icon className="w-4 h-4 text-primary flex-shrink-0" />
@@ -126,9 +147,8 @@ const Index = () => {
                         <AccordionContent className="text-xs text-muted-foreground pb-3">
                           {item.answer}
                         </AccordionContent>
-                      </AccordionItem>
-                    );
-                  })}
+                      </AccordionItem>;
+                })}
                 </Accordion>
               </div>
             </div>
