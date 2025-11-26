@@ -47,7 +47,7 @@ const Index = () => {
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-foreground leading-[1.1] tracking-tight">
                   PureClean™ Pro+
-                  <span className="block md:text-4xl lg:text-5xl font-sans mt-0 text-slate-500 mb-[25px] text-base">
+                  <span className="block md:text-4xl font-sans mt-0 text-slate-500 mb-[25px] text-base lg:text-2xl">
                     Steam cleaning system
                   </span>
                 </h1>
