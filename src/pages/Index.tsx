@@ -61,7 +61,7 @@ const Index = () => {
               {/* Key Features - Elegant List */}
               <div className="space-y-3 py-6 border-y border-border">
                 {[
-                  { text: "Safe for kids and pets to play on immediately", icon: Heart },
+                  { text: "Create safe environment for kids and pets to play on immediately", icon: Heart },
                   { text: "Clean your entire home without stopping to refill", icon: Clock },
                   { text: "Eliminate allergens and bacteria without harsh chemicals", icon: Droplets },
                   { text: "Transform every surface from floors to upholstery", icon: Home },
