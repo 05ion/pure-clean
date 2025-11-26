@@ -23,7 +23,7 @@ const Index = () => {
               <ProductCarousel />
               
               {/* Trust Signals - Moved Here */}
-              <div className="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-6">
+              <div className="flex items-center gap-2 mt-4 md:mt-6">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-secondary text-secondary" />
@@ -37,17 +37,17 @@ const Index = () => {
 
             {/* Product Info */}
             <div className="space-y-4 md:space-y-6 w-full">
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              <div className="flex flex-wrap gap-2">
                 <Badge className="bg-primary text-primary-foreground text-xs md:text-sm">100% Chemical-Free</Badge>
                 <Badge className="bg-secondary text-secondary-foreground text-xs md:text-sm">Limited Time Offer</Badge>
               </div>
               
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-center md:text-left">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Professional Steam Cleaning
                 <span className="text-primary block mt-2">For Your Healthiest Home Yet</span>
               </h1>
 
-              <p className="text-base md:text-xl text-muted-foreground leading-relaxed text-center md:text-left">
+              <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
                 Imagine walking into a spotless home every day—without the guilt of harsh chemicals around your kids or pets. 
                 PureClean Pro transforms cleaning from a dreaded chore into effortless satisfaction. Watch years of grime vanish 
                 in seconds with pure steam power. Your family deserves a cleaner home and a healthier life.
@@ -73,18 +73,18 @@ const Index = () => {
 
               {/* Pricing */}
               <div className="pt-6 border-t border-border">
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-5xl font-bold text-primary">$119.99</span>
-                  <span className="text-2xl text-muted-foreground line-through">$199.99</span>
-                  <Badge variant="destructive" className="text-base">40% OFF</Badge>
+                <div className="flex flex-wrap items-baseline gap-2 md:gap-3 mb-2">
+                  <span className="text-4xl md:text-5xl font-bold text-primary">$119.99</span>
+                  <span className="text-xl md:text-2xl text-muted-foreground line-through">$199.99</span>
+                  <Badge variant="destructive" className="text-sm md:text-base">40% OFF</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">Free shipping • 2-year warranty included</p>
               </div>
 
               {/* CTA Button */}
               <div>
-                <Button size="lg" className="w-full text-lg h-14 shadow-lg">
-                  <ShoppingCart className="mr-2 h-5 w-5" />
+                <Button size="lg" className="w-full text-base md:text-lg h-12 md:h-14 shadow-lg">
+                  <ShoppingCart className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                   Add to Cart
                 </Button>
               </div>
