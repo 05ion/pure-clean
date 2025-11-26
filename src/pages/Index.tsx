@@ -7,10 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCarousel from "@/components/ProductCarousel";
 import AnnouncementMarquee from "@/components/AnnouncementMarquee";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <AnnouncementMarquee />
       <Header />
       
@@ -29,9 +27,7 @@ const Index = () => {
                   <div>
                     <div className="flex items-center gap-2">
                       <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
-                        ))}
+                        {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />)}
                       </div>
                       <span className="text-sm font-semibold text-foreground">4.9</span>
                     </div>
@@ -51,8 +47,8 @@ const Index = () => {
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-foreground leading-[1.1] tracking-tight">
                   PureClean Pro
-                  <span className="block text-3xl md:text-4xl lg:text-5xl text-primary mt-3">
-                    Steam Cleaning System
+                  <span className="block md:text-4xl lg:text-5xl font-sans text-lg mt-0 text-slate-500 mb-[25px]">
+                    Steam cleaning system
                   </span>
                 </h1>
 
@@ -64,18 +60,10 @@ const Index = () => {
 
               {/* Key Features - Elegant List */}
               <div className="space-y-3 py-6 border-y border-border">
-                {[
-                  "1800W Professional Performance",
-                  "100% Chemical-Free Cleaning",
-                  "1.5L Extended Capacity Tank",
-                  "15 Premium Attachments",
-                  "2-Year Comprehensive Warranty"
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
+                {["1800W Professional Performance", "100% Chemical-Free Cleaning", "1.5L Extended Capacity Tank", "15 Premium Attachments", "2-Year Comprehensive Warranty"].map((feature, index) => <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-foreground">{feature}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* Pricing - Premium Style */}
@@ -113,18 +101,27 @@ const Index = () => {
         <section className="border-y border-border bg-gradient-to-r from-muted/30 to-muted/10 py-12">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-              {[
-                { icon: Shield, label: "Certified Safe", desc: "EPA Approved" },
-                { icon: Award, label: "Award Winning", desc: "2024 Design Excellence" },
-                { icon: TrendingUp, label: "99.9% Effective", desc: "Lab Tested" },
-                { icon: Sparkles, label: "Premium Quality", desc: "2-Year Warranty" }
-              ].map((item, index) => (
-                <div key={index} className="text-center space-y-2">
+              {[{
+              icon: Shield,
+              label: "Certified Safe",
+              desc: "EPA Approved"
+            }, {
+              icon: Award,
+              label: "Award Winning",
+              desc: "2024 Design Excellence"
+            }, {
+              icon: TrendingUp,
+              label: "99.9% Effective",
+              desc: "Lab Tested"
+            }, {
+              icon: Sparkles,
+              label: "Premium Quality",
+              desc: "2-Year Warranty"
+            }].map((item, index) => <div key={index} className="text-center space-y-2">
                   <item.icon className="w-8 h-8 text-primary mx-auto" />
                   <h3 className="font-semibold text-foreground">{item.label}</h3>
                   <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -197,17 +194,22 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              {[
-                { value: "1800W", label: "Power Output" },
-                { value: "230°F", label: "Steam Temperature" },
-                { value: "4.5 Bar", label: "Pressure" },
-                { value: "1.5L", label: "Tank Capacity" }
-              ].map((spec, index) => (
-                <Card key={index} className="text-center p-6 border-border bg-background shadow-elegant">
+              {[{
+              value: "1800W",
+              label: "Power Output"
+            }, {
+              value: "230°F",
+              label: "Steam Temperature"
+            }, {
+              value: "4.5 Bar",
+              label: "Pressure"
+            }, {
+              value: "1.5L",
+              label: "Tank Capacity"
+            }].map((spec, index) => <Card key={index} className="text-center p-6 border-border bg-background shadow-elegant">
                   <div className="text-4xl font-light text-primary mb-2">{spec.value}</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wider">{spec.label}</div>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -217,9 +219,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <div className="flex justify-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-accent text-accent" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-accent text-accent" />)}
               </div>
               <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground mb-4">
                 Customer Reviews
@@ -230,32 +230,25 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  name: "Sarah Mitchell",
-                  title: "Verified Purchase",
-                  text: "The quality is exceptional. Finally, a cleaning solution that matches my standards without compromising on safety.",
-                  rating: 5
-                },
-                {
-                  name: "Michael Chen",
-                  title: "Verified Purchase",
-                  text: "Professional-grade performance at home. The attention to detail in both design and function is remarkable.",
-                  rating: 5
-                },
-                {
-                  name: "Jennifer Adams",
-                  title: "Verified Purchase",
-                  text: "An investment worth making. The chemical-free approach gives me complete peace of mind with my family.",
-                  rating: 5
-                }
-              ].map((testimonial, index) => (
-                <Card key={index} className="border-border shadow-elegant">
+              {[{
+              name: "Sarah Mitchell",
+              title: "Verified Purchase",
+              text: "The quality is exceptional. Finally, a cleaning solution that matches my standards without compromising on safety.",
+              rating: 5
+            }, {
+              name: "Michael Chen",
+              title: "Verified Purchase",
+              text: "Professional-grade performance at home. The attention to detail in both design and function is remarkable.",
+              rating: 5
+            }, {
+              name: "Jennifer Adams",
+              title: "Verified Purchase",
+              text: "An investment worth making. The chemical-free approach gives me complete peace of mind with my family.",
+              rating: 5
+            }].map((testimonial, index) => <Card key={index} className="border-border shadow-elegant">
                   <CardContent className="pt-8 pb-8 px-6 space-y-4">
                     <div className="flex mb-2">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                      ))}
+                      {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                     </div>
                     <p className="text-muted-foreground leading-relaxed italic">
                       "{testimonial.text}"
@@ -265,8 +258,7 @@ const Index = () => {
                       <p className="text-sm text-muted-foreground">{testimonial.title}</p>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -360,8 +352,6 @@ const Index = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
