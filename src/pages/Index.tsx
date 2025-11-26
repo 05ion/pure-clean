@@ -46,7 +46,7 @@ const Index = () => {
                 </Badge>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-foreground leading-[1.1] tracking-tight">
-                  PureClean Pro
+                  PureClean™ Pro+
                   <span className="block md:text-4xl lg:text-5xl font-sans text-lg mt-0 text-slate-500 mb-[25px]">
                     Steam cleaning system
                   </span>
