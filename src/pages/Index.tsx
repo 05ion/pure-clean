@@ -1,4 +1,4 @@
-import { ShoppingCart, Check, Star, Shield, Award, Sparkles, TrendingUp, CheckCircle, Heart, Clock, Droplets, Home, ShieldCheck } from "lucide-react";
+import { ShoppingCart, Check, Star, Shield, Award, Sparkles, TrendingUp, CheckCircle, Heart, Clock, Droplets, Home, ShieldCheck, Zap, CircleHelp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -105,19 +105,31 @@ const Index = () => {
               </p>
 
               {/* Common Objections */}
-              <div className="mt-6 pt-6 border-t border-border space-y-3">
-                <p className="text-xs text-muted-foreground text-center mb-3">Common concerns answered:</p>
-                {[
-                  { question: "Does it really clean tough stains?", answer: "Yes - 230°F steam dissolves even baked-on grime" },
-                  { question: "Is it complicated to use?", answer: "No - just fill with water and it's ready in 3 minutes" },
-                  { question: "Will it damage my surfaces?", answer: "No - safe for all sealed surfaces and fabrics" },
-                  { question: "Does steam actually sanitize?", answer: "Yes - lab-tested to eliminate 99.9% of bacteria" }
-                ].map((item, index) => (
-                  <div key={index} className="text-left">
-                    <p className="text-sm text-foreground font-medium">{item.question}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{item.answer}</p>
-                  </div>
-                ))}
+              <div className="mt-6 pt-6 border-t border-border">
+                <p className="text-xs text-muted-foreground text-center mb-4">Common concerns answered:</p>
+                <Accordion type="single" collapsible className="w-full space-y-2">
+                  {[
+                    { question: "Does it really clean tough stains?", answer: "Yes - 230°F steam dissolves even baked-on grime and sanitizes without scrubbing", icon: Sparkles, value: "obj-1" },
+                    { question: "Is it complicated to use?", answer: "No - just fill with water and it's ready in 3 minutes. One button operation", icon: Zap, value: "obj-2" },
+                    { question: "Will it damage my surfaces?", answer: "No - safe for all sealed surfaces and fabrics. Includes surface-specific attachments", icon: ShieldCheck, value: "obj-3" },
+                    { question: "Does steam actually sanitize?", answer: "Yes - lab-tested to eliminate 99.9% of bacteria, viruses, and allergens naturally", icon: Droplets, value: "obj-4" }
+                  ].map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <AccordionItem key={item.value} value={item.value} className="border border-border rounded-lg px-4 bg-muted/30">
+                        <AccordionTrigger className="text-left hover:no-underline py-3">
+                          <div className="flex items-center gap-2">
+                            <Icon className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span className="text-sm text-foreground font-medium">{item.question}</span>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-xs text-muted-foreground pb-3">
+                          {item.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    );
+                  })}
+                </Accordion>
               </div>
             </div>
           </div>
