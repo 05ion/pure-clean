@@ -16,38 +16,38 @@ const Index = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-12 md:py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <section className="container mx-auto px-4 py-8 md:py-20">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start md:items-center max-w-7xl mx-auto">
             {/* Product Images */}
-            <div>
+            <div className="w-full">
               <ProductCarousel />
               
               {/* Trust Signals - Moved Here */}
-              <div className="flex items-center gap-2 mt-6">
+              <div className="flex items-center justify-center md:justify-start gap-2 mt-4 md:mt-6">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
+                    <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-secondary text-secondary" />
                   ))}
                 </div>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-xs md:text-sm text-muted-foreground">
                   <strong className="text-foreground">4.9/5</strong> from 2,847 verified customers
                 </span>
               </div>
             </div>
 
             {/* Product Info */}
-            <div className="space-y-6">
-              <div className="flex gap-2">
-                <Badge className="bg-primary text-primary-foreground">100% Chemical-Free</Badge>
-                <Badge className="bg-secondary text-secondary-foreground">Limited Time Offer</Badge>
+            <div className="space-y-4 md:space-y-6 w-full">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                <Badge className="bg-primary text-primary-foreground text-xs md:text-sm">100% Chemical-Free</Badge>
+                <Badge className="bg-secondary text-secondary-foreground text-xs md:text-sm">Limited Time Offer</Badge>
               </div>
               
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-center md:text-left">
                 Professional Steam Cleaning
                 <span className="text-primary block mt-2">For Your Healthiest Home Yet</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground leading-relaxed text-center md:text-left">
                 Imagine walking into a spotless home every day—without the guilt of harsh chemicals around your kids or pets. 
                 PureClean Pro transforms cleaning from a dreaded chore into effortless satisfaction. Watch years of grime vanish 
                 in seconds with pure steam power. Your family deserves a cleaner home and a healthier life.

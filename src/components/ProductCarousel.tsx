@@ -27,13 +27,13 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full">
       {/* Main Image */}
       <div className="relative aspect-square overflow-hidden rounded-2xl bg-muted mb-4 shadow-lg max-h-[400px] md:max-h-none">
         <img
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
-          className="w-full h-full object-contain p-4 md:p-0"
+          className="w-full h-full object-contain p-2 md:p-0"
         />
         
         {/* Navigation Buttons */}
